@@ -7,6 +7,11 @@ pip install pybuilder
 pip install xmlrunner
 pip install unittest-xml-reporting
 
+run:
+import nltk
+nltk.download() 
+at python prompt, and download the all-corpus with GUI. 
+
 Build instructions:   
 Possible to build with PyInstaller or CX_freeze   
 
