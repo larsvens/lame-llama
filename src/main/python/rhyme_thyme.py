@@ -4,21 +4,30 @@ import nltk
 class RhymeThyme(object):
 
     def rhyme_thyme(self, word):
+
+        # get dictionary from nltk
         entries = nltk.corpus.cmudict.entries()
-        syllables = [(inp, syl) for inp, syl in entries if inp == word]
+
+        # Let syllables be the array of syllables which rhyme with the input word
+        syllables = [syl for inp, syl in entries if inp == word]
+
+        # Number of characters in end of syllable which have to agree in order to rhyme
         level = 2
+
+        # Loop through syllables and choose the words which have syllables.. 
         rhymes = []
-        for (inp, syllable) in syllables:
+        for syllable in syllables:
             rhymes += [inp for inp, pron in entries if pron[-level:] == syllable[-level:]]
-        #answers = list(set(rhymes))[0:5] #Five answers
-        #output = []
-        #for i in range(len(answers)):
-            #output.append(str(answers[i]))
-        if len(list(set(rhymes))) > 1:
-            answers = list(set(rhymes))[0] #One answer
+
+        # Remove the duplicate rhymes by using set(), and then convert to list() 
+        possibleRhymes = list(set(rhymes))
+
+        if len(possibleRhymes) > 1:
+            # Output one answer
+            answers = possibleRhymes[0] 
             output = str(answers)
         else:
-            answers = 'Failed to find rhyming word..'
+            answers = 'Failed to find rhyming word...'
             output = str(answers)
         return output
         #return 'Thyme\n'
