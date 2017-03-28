@@ -22,15 +22,17 @@ class RhymeThyme(object):
         # Remove the duplicate rhymes by using set(), and then convert to list() 
         possibleRhymes = list(set(rhymes))
 
-        if len(possibleRhymes) > 1:
+        if len(possibleRhymes) > 1 :
             # Output one answer
             answers = possibleRhymes[0] 
             output = str(answers)
+            if not (output in nltk.corpus.words.words()):
+                answers = 'Failed to find rhyming word...'
+                output = str(answers)
         else:
             answers = 'Failed to find rhyming word...'
             output = str(answers)
         return output
-        #return 'Thyme\n'
 
     def input_from_user(self):
         # Input word
