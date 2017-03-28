@@ -5,7 +5,8 @@ python:
    #- "3.5"
 # command to install dependencies
 install: 
-  - pip install -U nltk
+  - pip install -U nltk 
+  - python download_nltk_data.py
   - pip install -r requirements.txt
 # command to run tests
 script: pyb -v
