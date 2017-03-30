@@ -4,6 +4,8 @@ import nltk
 class RhymeThyme(object):
 
     def rhyme_thyme(self, word):
+        if word == "Your mama is so fat...":
+            return "...she just had a baby and said it was delicious ;)"
 
         # get dictionary from nltk
         entries = nltk.corpus.cmudict.entries()
