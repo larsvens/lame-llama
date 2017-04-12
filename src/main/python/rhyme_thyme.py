@@ -22,7 +22,7 @@ class RhymeThyme(object):
             syllables = [syl for inp, syl in entries if inp == word]
 
             # Number of characters in end of syllable which have to agree in order to rhyme
-            level = 5
+            level = 3
 
             # Loop through syllables and choose the words which have syllables..
             rhymes = []
@@ -73,8 +73,12 @@ class RhymeThyme(object):
 
     def __init__(self):
         self.print_welcome_text()
-        word = self.input_from_user()
-        self.output_to_user(self.rhyme_thyme(word))
+        while True:
+            word = self.input_from_user()
+            if word == 'exit':
+                break
+            else:
+                self.output_to_user(self.rhyme_thyme(word))
 
 if __name__ == '__main__':
     RhymeThyme()
