@@ -1,16 +1,23 @@
 import sys
 import nltk
+import subprocess
+
 
 class RhymeThyme(object):
 
     def rhyme_thyme(self, word):
         # Check if word or sentence
-        if len(word.split(' ')) > 1: self.ws = 'sentence'
-        else: self.ws = 'word'
+        if len(word.split(' ')) > 1:
+            self.ws = 'sentence'
+        else:
+            self.ws = 'word'
 
         if word == "Your mama is so fat...":
             return "...she just had a baby and said it was delicious ;)"
 
+        if word == 'lame llama':
+            import os
+            os.popen2("cvlc brawwrr.wav --play-and-exit")
         # get dictionary from nltk
         entries = nltk.corpus.cmudict.entries()
 
