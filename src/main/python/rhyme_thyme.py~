@@ -46,7 +46,7 @@ class RhymeThyme(object):
             allwords = [str(oneword) for oneword in nltk.corpus.words.words()]
             possibleRhymes = [x for x in possibleRhymes if x in allwords]
             if len(possibleRhymes) == 0:
-                output += 'Failed to find rhyming word...'
+                output += 'Failed to find rhyming word... '
             else:
                 # Output one answer
                 output += str(possibleRhymes[0]) + ' '

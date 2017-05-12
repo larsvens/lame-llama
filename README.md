@@ -7,6 +7,10 @@ pip install pybuilder
 pip install xmlrunner
 pip install unittest-xml-reporting
 
+for sound (optional)
+sudo add-apt-repository ppa:videolan/stable-daily
+sudo apt-get update && sudo apt-get install vlc
+
 run:
 import nltk
 nltk.download() 
